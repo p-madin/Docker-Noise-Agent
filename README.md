@@ -7,7 +7,7 @@ Real-time environmental sound classification using deep learning. Detects 58 dif
 ```bash
 # Clone the repository
 git clone https://github.com/p-madin/Docker-Noise-Agent
-cd AI-Noise
+cd Docker-Noise-Agent
 
 # Start with Docker Compose
 docker compose up
@@ -39,7 +39,7 @@ To retrain from scratch or fine-tune:
 
 ```bash
 # Inside the container
-docker exec -it ai-noise-app-1 bash
+docker exec -it docker-noise-agent-app-1 bash
 cd /root/Workspace
 python compile_classifiers.py
 ```
@@ -146,7 +146,7 @@ See `app/compiler benchmark/framework versions.md` for detailed analysis.
 ## Project Structure
 
 ```
-AI-Noise/
+Docker-Noise-Agent/
 ├── app/
 │   ├── server.py              # Flask web server
 │   ├── audio_engine.py        # CNN inference engine

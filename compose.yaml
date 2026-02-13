@@ -24,10 +24,10 @@ services:
   db:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: docker_lemp
+      MYSQL_ROOT_PASSWORD: docker_noise_agent
       MYSQL_DATABASE: stackDB
-      MYSQL_USER: docker_user_lemp
-      MYSQL_PASSWORD: docker_user_lemp
+      MYSQL_USER: docker_user_noise_agent
+      MYSQL_PASSWORD: docker_user_noise_agent
       TZ: Australia/Sydney
     volumes:
       - db_data:/var/lib/mysql

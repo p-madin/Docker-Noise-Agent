@@ -15,7 +15,7 @@ CORS(app)
 
 # Database Configuration
 # Using the service name 'db' from compose.yaml as the hostname
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://docker_user_lemp:docker_user_lemp@db/stackDB'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://docker_user_noise_agent:docker_user_noise_agent@db/stackDB'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)

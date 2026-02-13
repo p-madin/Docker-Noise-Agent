@@ -3,5 +3,6 @@ CREATE TABLE IF NOT EXISTS detections (
     label VARCHAR(255) NOT NULL,
     confidence FLOAT NOT NULL,
     audio_data LONGBLOB,
+    is_flagged tinyint(1) DEFAULT '0',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
