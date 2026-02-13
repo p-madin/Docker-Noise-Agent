@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS detections (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    label VARCHAR(255) NOT NULL,
+    confidence FLOAT NOT NULL,
+    audio_data LONGBLOB,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

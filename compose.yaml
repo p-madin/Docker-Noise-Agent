@@ -1,0 +1,48 @@
+services:
+  app:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./app:/root/Workspace
+    environment:
+      TZ: Australia/Sydney
+      PYTHONUNBUFFERED: 1
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: compute,utility
+      TF_FORCE_GPU_ALLOW_GROWTH: "true"
+    networks:
+      stack-network:
+        ipv4_address: 172.20.0.201
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: docker_lemp
+      MYSQL_DATABASE: stackDB
+      MYSQL_USER: docker_user_lemp
+      MYSQL_PASSWORD: docker_user_lemp
+      TZ: Australia/Sydney
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./conf/:/docker-entrypoint-initdb.d/
+    ports:
+      - "3306:3306"
+    networks:
+      stack-network:
+        ipv4_address: 172.20.0.200
+volumes:
+  db_data:
+networks:
+  stack-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+          gateway: 172.20.0.1

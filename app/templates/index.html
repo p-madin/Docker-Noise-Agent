@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Noise Classifier | Real-time</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Noise Classifier</h1>
+            <p class="subtitle">Identifying environmental sounds in real-time</p>
+
+            <div class="controls">
+                <canvas id="visualizer"></canvas>
+                <button id="listenBtn">
+                    <span id="btnIcon">🎤</span>
+                    <span id="btnText">Start Listening</span>
+                </button>
+            </div>
+
+            <div class="tabs">
+                <div class="tab active" data-tab="live">Live Stream</div>
+                <div class="tab" data-tab="history">History (Persisted)</div>
+            </div>
+
+            <div id="liveView">
+                <div id="log" class="log-container">
+                    <!-- Detection logs will appear here -->
+                </div>
+            </div>
+
+            <div id="historyView" class="history-container">
+                <!-- Historical logs will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/behaviour.js') }}"></script>
+</body>
+
+</html>

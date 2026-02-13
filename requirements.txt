@@ -1,0 +1,14 @@
+nltk
+flask
+librosa
+scipy
+numpy
+flask-cors
+scikit-learn
+joblib
+pandas
+resampy
+flask-sqlalchemy
+mysql-connector-python
+tensorflow[and-cuda]
+matplotlib

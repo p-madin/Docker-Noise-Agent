@@ -1,0 +1,24 @@
+# Handle line endings automatically for files detected as text
+# and leave all files untouched if they are binary.
+* text=auto
+
+# Force bash scripts to always use LF, so they don't break in Docker/Linux
+*.sh text eol=lf
+
+# Force python files to use LF
+*.py text eol=lf
+
+# Explicitly mark binary files
+*.pickle binary
+
+# Documentation and front-end
+*.html text
+*.css text
+*.md text
+
+# Config files
+*.yaml text
+*.yml text
+Dockerfile text
+.gitignore text
+.gitattributes text
